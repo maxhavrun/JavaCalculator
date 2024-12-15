@@ -31,7 +31,13 @@ public class MainWindow extends Application {
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.setResizable(false);
         stage.setTitle("Java Calculator");
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/icon.png")));
+        stage.getIcons().add(
+                new Image(
+                        Objects.requireNonNull(
+                                getClass().getResourceAsStream("/images/icon.png")
+                        )
+                )
+        );
 
         ((MainWindowController)fxmlLoader.getController()).init(stage);
 
